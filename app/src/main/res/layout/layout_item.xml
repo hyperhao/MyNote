@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.daimajia.swipe.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/swipe_root"
+    android:layout_height="160dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="10dp">
+
+    <LinearLayout
+        android:id="@+id/layout_delete"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:background="#FF5534"
+        android:gravity="center"
+        android:tag="Right"
+        android:weightSum="10">
+
+        <ImageView
+            android:id="@+id/trash"
+            android:layout_width="27dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:src="@drawable/trash" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:text="删除"
+            android:textColor="#fff"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_center"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            tools:text="2019/4/3" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="123456" />
+
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/grey"
+            android:textSize="17sp"
+            tools:text="通过该设置保留状态栏高度的 paddingTop 后，再设置状态栏的颜色。就可以达到设想的效果。但这种方式实现有些问题，例如我们想设置状态栏为蓝色，只能通过设置最外层布局的背景为蓝色来实现，然而一旦设置后，整个布局就都变成了蓝色，只能在下方的布局内容里另外再设置白色背景，而这样就存在过度绘制了。而且设置了 fitsSystemWindows=true 属性的页面，在点击 EditText 调出 软键盘时，整个视图都会被顶上去。" />
+    </LinearLayout>
+</com.daimajia.swipe.SwipeLayout>
