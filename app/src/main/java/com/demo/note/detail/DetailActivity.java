@@ -15,7 +15,7 @@ import com.demo.note.base.activity.BaseActivity;
 
 public class DetailActivity extends BaseActivity {
 
-    private DetailFragment mFragment = new DetailFragment();
+    private NoteDetailPage mFragment = new NoteDetailPage();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

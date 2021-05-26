@@ -25,7 +25,7 @@ import jp.wasabeef.richeditor.RichEditor;
  * @time 2021/5/19
  */
 
-public class DetailFragment extends Fragment implements IDetailView {
+public class NoteDetailPage extends Fragment implements IDetailView {
 
     private DetailRepo detailRepo;
     private TextView time;

@@ -32,7 +32,7 @@ import java.util.List;
  * @time 2021/5/19
  */
 
-public class NoteFragment extends Fragment implements INoteContract.View {
+public class NoteListPage extends Fragment implements INoteContract.View {
     private NotePresenter presenter;
     private NoteAdapter adapter;
     private RecyclerView recyclerView;

@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment;
 
 import com.demo.note.R;
 import com.demo.note.base.activity.BaseActivity;
-import com.demo.note.list.view.NoteFragment;
+import com.demo.note.list.view.NoteListPage;
 import com.demo.note.create.CreateNoteActivity;
 
 public class HomeActivity extends BaseActivity {
@@ -18,7 +18,7 @@ public class HomeActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
-        mFragment = new NoteFragment();
+        mFragment = new NoteListPage();
         mFragment.setArguments(intent.getExtras());
         getSupportFragmentManager()
                 .beginTransaction()

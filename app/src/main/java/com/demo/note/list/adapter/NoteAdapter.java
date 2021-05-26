@@ -17,6 +17,7 @@ import com.demo.note.R;
 import com.demo.note.detail.DetailActivity;
 import com.demo.note.bean.NoteModel;
 import com.demo.note.list.presenter.NotePresenter;
+import com.demo.note.list.view.NoteListCell;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +38,6 @@ public class NoteAdapter extends RecyclerView.Adapter {
     }
 
     public void removeItem(int pos) {
-        Log.d("HYP", "pos" + pos);
         mDatas.remove(pos);
         notifyDataSetChanged();
     }
@@ -54,14 +54,14 @@ public class NoteAdapter extends RecyclerView.Adapter {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new TextViewHolder(inflater.inflate(R.layout.layout_item, parent, false));
+        return new NoteListCell(inflater.inflate(R.layout.layout_item, parent, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        if (holder instanceof TextViewHolder) {
-            ((TextViewHolder) holder).bindViewHolder(mDatas.get(position));
-            ((TextViewHolder) holder).setClickListener(new View.OnClickListener() {
+        if (holder instanceof NoteListCell) {
+            ((NoteListCell) holder).bindViewHolder(mDatas.get(position));
+            ((NoteListCell) holder).setClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(view.getContext(), DetailActivity.class);
@@ -70,7 +70,7 @@ public class NoteAdapter extends RecyclerView.Adapter {
                 }
             });
 
-            ((TextViewHolder) holder).setCloseListener(new View.OnClickListener() {
+            ((NoteListCell) holder).setCloseListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Log.d("HYP", "pos pos:" + position);
@@ -89,50 +89,5 @@ public class NoteAdapter extends RecyclerView.Adapter {
     public int getItemCount() {
         return mDatas.size();
     }
-
-    //自定义的ViewHolder，持有每个Item的的所有界面元素
-    public static class TextViewHolder extends RecyclerView.ViewHolder {
-        private SwipeLayout root;
-        private LinearLayout delete;
-        private LinearLayout layout_center;
-        public TextView title;
-        public TextView time;
-        public TextView desc;
-
-        public void setCloseListener(View.OnClickListener clickListener) {
-            delete.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    clickListener.onClick(view);
-                    root.close();
-                }
-            });
-        }
-
-        public void setClickListener(View.OnClickListener clickListener) {
-            layout_center.setOnClickListener(clickListener);
-        }
-
-        public TextViewHolder(View view) {
-            super(view);
-            initView();
-        }
-
-        private void initView() {
-            root = itemView.findViewById(R.id.swipe_root);
-            delete = itemView.findViewById(R.id.layout_delete);
-            time = itemView.findViewById(R.id.tv_time);
-            desc = itemView.findViewById(R.id.tv_desc);
-            title = itemView.findViewById(R.id.tv_title);
-            layout_center = itemView.findViewById(R.id.layout_center);
-        }
-
-        public void bindViewHolder(NoteModel bean) {
-            time.setText(bean.timeStamp);
-            title.setText(bean.title);
-            desc.setText(bean.content);
-        }
-    }
-
 
 }
