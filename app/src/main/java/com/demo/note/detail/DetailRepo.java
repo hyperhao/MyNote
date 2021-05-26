@@ -1,6 +1,6 @@
 package com.demo.note.detail;
 
-import com.demo.note.bean.NoteBean;
+import com.demo.note.bean.NoteModel;
 import com.google.gson.Gson;
 
 import org.jetbrains.annotations.NotNull;
@@ -43,8 +43,8 @@ public class DetailRepo {
             @Override
             public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
                 if (response.body() != null) {
-                    NoteBean noteBean = new Gson().fromJson(response.body().string(), NoteBean.class);
-                    iDetailView.getNoteSuccess(noteBean);
+                    NoteModel noteModel = new Gson().fromJson(response.body().string(), NoteModel.class);
+                    iDetailView.getNoteSuccess(noteModel);
                 }
             }
         });

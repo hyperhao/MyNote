@@ -1,6 +1,6 @@
 package com.demo.note.list.model;
 
-import com.demo.note.bean.NoteBean;
+import com.demo.note.bean.NoteModel;
 
 import java.util.List;
 
@@ -17,9 +17,9 @@ import retrofit2.http.Query;
 public interface INoteApi {
 
     @GET("list")
-    Observable<List<NoteBean>> getNoteList();
+    Observable<List<NoteModel>> getNoteList();
 
     @GET("read")
-    Observable<NoteBean> readNote(@Query("id") String id);
+    Observable<NoteModel> readNote(@Query("id") String id);
 
 }

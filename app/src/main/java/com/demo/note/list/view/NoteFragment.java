@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.demo.note.R;
 import com.demo.note.list.adapter.NoteAdapter;
-import com.demo.note.bean.NoteBean;
+import com.demo.note.bean.NoteModel;
 import com.demo.note.list.contract.INoteContract;
 import com.demo.note.list.presenter.NotePresenter;
 import com.scwang.smart.refresh.footer.ClassicsFooter;
@@ -78,7 +78,7 @@ public class NoteFragment extends Fragment implements INoteContract.View {
     }
 
     @Override
-    public void getNoteListSuccess(List<NoteBean> list) {
+    public void getNoteListSuccess(List<NoteModel> list) {
         adapter.setData(list);
         refreshLayout.finishRefresh(1000/*,false*/);//传入false表示刷新失败
         refreshLayout.finishRefresh(true);//传入false表示刷新失败

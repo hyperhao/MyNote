@@ -1,6 +1,6 @@
 package com.demo.note.list.contract;
 
-import com.demo.note.bean.NoteBean;
+import com.demo.note.bean.NoteModel;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import java.util.List;
 public interface INoteContract {
 
     interface View {
-        void getNoteListSuccess(List<NoteBean> list);
+        void getNoteListSuccess(List<NoteModel> list);
 
         void delete(int pos);
 

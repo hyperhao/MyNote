@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.daimajia.swipe.SwipeLayout;
 import com.demo.note.R;
 import com.demo.note.detail.DetailActivity;
-import com.demo.note.bean.NoteBean;
+import com.demo.note.bean.NoteModel;
 import com.demo.note.list.presenter.NotePresenter;
 
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ import java.util.List;
  */
 
 public class NoteAdapter extends RecyclerView.Adapter {
-    private List<NoteBean> mDatas = new ArrayList<>();
+    private List<NoteModel> mDatas = new ArrayList<>();
     private LayoutInflater inflater;
     private NotePresenter presenter;
 
@@ -42,7 +42,7 @@ public class NoteAdapter extends RecyclerView.Adapter {
         notifyDataSetChanged();
     }
 
-    public void setData(List<NoteBean> list) {
+    public void setData(List<NoteModel> list) {
         if (list == null) {
             return;
         }
@@ -127,7 +127,7 @@ public class NoteAdapter extends RecyclerView.Adapter {
             layout_center = itemView.findViewById(R.id.layout_center);
         }
 
-        public void bindViewHolder(NoteBean bean) {
+        public void bindViewHolder(NoteModel bean) {
             time.setText(bean.timeStamp);
             title.setText(bean.title);
             desc.setText(bean.content);

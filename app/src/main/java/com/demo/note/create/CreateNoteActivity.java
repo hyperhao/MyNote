@@ -15,15 +15,15 @@ import com.demo.note.base.activity.BaseActivity;
  * @time 2021/5/20
  */
 
-public class NewNoteActivity extends BaseActivity {
+public class CreateNoteActivity extends BaseActivity {
 
-    private NewNoteFragment mFragment;
+    private NoteCreatePage mFragment;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
-        mFragment = new NewNoteFragment();
+        mFragment = new NoteCreatePage();
         mFragment.setArguments(intent.getExtras());
 
         getSupportFragmentManager()

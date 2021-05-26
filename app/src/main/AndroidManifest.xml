@@ -30,7 +30,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".detail.DetailActivity" />
-        <activity android:name=".create.NewNoteActivity" />
+        <activity android:name=".create.CreateNoteActivity" />
     </application>
 
 </manifest>

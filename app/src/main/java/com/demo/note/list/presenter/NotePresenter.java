@@ -1,7 +1,7 @@
 package com.demo.note.list.presenter;
 
 import com.demo.note.base.network.RetrofitUtil;
-import com.demo.note.bean.NoteBean;
+import com.demo.note.bean.NoteModel;
 import com.demo.note.list.contract.INoteContract;
 import com.demo.note.list.model.INoteApi;
 
@@ -21,7 +21,6 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import okhttp3.RequestBody;
 import okhttp3.Response;
 
 /**
@@ -77,7 +76,7 @@ public class NotePresenter implements INoteContract.Presenter {
     @Override
     public void getNoteList() {
         repo.getNoteList().subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<List<NoteBean>>() {
+                .observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<List<NoteModel>>() {
             @Override
             public void onSubscribe(@NonNull Disposable d) {
                 mView.showLoading();
@@ -85,8 +84,8 @@ public class NotePresenter implements INoteContract.Presenter {
             }
 
             @Override
-            public void onNext(@NonNull List<NoteBean> noteBeans) {
-                mView.getNoteListSuccess(noteBeans);
+            public void onNext(@NonNull List<NoteModel> noteModels) {
+                mView.getNoteListSuccess(noteModels);
             }
 
             @Override

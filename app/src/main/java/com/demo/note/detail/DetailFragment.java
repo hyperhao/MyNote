@@ -15,7 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.demo.note.R;
-import com.demo.note.bean.NoteBean;
+import com.demo.note.bean.NoteModel;
 
 import jp.wasabeef.richeditor.RichEditor;
 
@@ -76,13 +76,13 @@ public class DetailFragment extends Fragment implements IDetailView {
     }
 
     @Override
-    public void getNoteSuccess(NoteBean noteBean) {
+    public void getNoteSuccess(NoteModel noteModel) {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                time.setText(noteBean.timeStamp);
-                title.setText(noteBean.title);
-                content.setHtml(noteBean.content);
+                time.setText(noteModel.timeStamp);
+                title.setText(noteModel.title);
+                content.setHtml(noteModel.content);
             }
         });
     }

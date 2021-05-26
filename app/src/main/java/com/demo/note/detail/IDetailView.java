@@ -1,10 +1,10 @@
 package com.demo.note.detail;
 
-import com.demo.note.bean.NoteBean;
+import com.demo.note.bean.NoteModel;
 
 public interface IDetailView {
 
-    void getNoteSuccess(NoteBean noteBean);
+    void getNoteSuccess(NoteModel noteModel);
 
     void saveSuccess();
 

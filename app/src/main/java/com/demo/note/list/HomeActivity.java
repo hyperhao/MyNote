@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment;
 import com.demo.note.R;
 import com.demo.note.base.activity.BaseActivity;
 import com.demo.note.list.view.NoteFragment;
-import com.demo.note.create.NewNoteActivity;
+import com.demo.note.create.CreateNoteActivity;
 
 public class HomeActivity extends BaseActivity {
     private Fragment mFragment;
@@ -30,7 +30,7 @@ public class HomeActivity extends BaseActivity {
         setRightBtn(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent newIntent = new Intent(HomeActivity.this, NewNoteActivity.class);
+                Intent newIntent = new Intent(HomeActivity.this, CreateNoteActivity.class);
                 startActivity(newIntent);
             }
         });

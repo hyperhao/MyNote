@@ -18,7 +18,7 @@ import androidx.fragment.app.Fragment;
 import com.demo.note.R;
 import com.demo.note.detail.DetailRepo;
 import com.demo.note.detail.IDetailView;
-import com.demo.note.bean.NoteBean;
+import com.demo.note.bean.NoteModel;
 
 import jp.wasabeef.richeditor.RichEditor;
 
@@ -28,7 +28,7 @@ import jp.wasabeef.richeditor.RichEditor;
  * @time 2021/5/19
  */
 
-public class NewNoteFragment extends Fragment implements IDetailView {
+public class NoteCreatePage extends Fragment implements IDetailView {
 
     private DetailRepo detailRepo;
     private TextView time;
@@ -76,13 +76,13 @@ public class NewNoteFragment extends Fragment implements IDetailView {
     }
 
     @Override
-    public void getNoteSuccess(NoteBean noteBean) {
+    public void getNoteSuccess(NoteModel noteModel) {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                time.setText(noteBean.timeStamp);
-                title.setText(noteBean.title);
-                content.setHtml(noteBean.content);
+                time.setText(noteModel.timeStamp);
+                title.setText(noteModel.title);
+                content.setHtml(noteModel.content);
             }
         });
     }
