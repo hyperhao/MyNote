@@ -11,6 +11,8 @@ import android.content.Context;
 
 public class NoteApp extends Application {
 
+    public static final String IP = "http://192.168.3.29:8080/";
+
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);

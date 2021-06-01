@@ -1,5 +1,6 @@
 package com.demo.note.detail;
 
+import com.demo.note.app.NoteApp;
 import com.demo.note.bean.NoteModel;
 import com.google.gson.Gson;
 
@@ -32,7 +33,7 @@ public class DetailRepo {
     public void get(String id) {
         OkHttpClient client = new OkHttpClient.Builder().callTimeout(3000L, TimeUnit.MILLISECONDS).build();
         Request request = new Request.Builder()
-                .url("http://10.76.104.58:8080/read?id=" + id)
+                .url(NoteApp.IP + "read?id=" + id)
                 .get()
                 .build();
         client.newCall(request).enqueue(new Callback() {
@@ -70,7 +71,7 @@ public class DetailRepo {
     public void create(RequestBody body) {
         OkHttpClient client = new OkHttpClient.Builder().callTimeout(3000L, TimeUnit.MILLISECONDS).build();
         Request request = new Request.Builder()
-                .url("http://10.76.104.58:8080/create")
+                .url(NoteApp.IP + "create")
                 .post(body)
                 .build();
         client.newCall(request).enqueue(new Callback() {
@@ -88,7 +89,7 @@ public class DetailRepo {
     public void update(RequestBody body) {
         OkHttpClient client = new OkHttpClient.Builder().callTimeout(3000L, TimeUnit.MILLISECONDS).build();
         Request request = new Request.Builder()
-                .url("http://10.76.104.58:8080/update")
+                .url(NoteApp.IP+"update")
                 .post(body)
                 .build();
         client.newCall(request).enqueue(new Callback() {

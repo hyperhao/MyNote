@@ -1,5 +1,6 @@
 package com.demo.note.list.presenter;
 
+import com.demo.note.app.NoteApp;
 import com.demo.note.base.network.RetrofitUtil;
 import com.demo.note.bean.NoteModel;
 import com.demo.note.list.contract.INoteContract;
@@ -58,7 +59,7 @@ public class NotePresenter implements INoteContract.Presenter {
     public void delete(String id, int pos) {
         OkHttpClient client = new OkHttpClient.Builder().callTimeout(3000L, TimeUnit.MILLISECONDS).build();
         Request request = new Request.Builder()
-                .url("http://10.76.104.58:8080/delete?id=" + id)
+                .url(NoteApp.IP + "delete?id=" + id)
                 .get()
                 .build();
         client.newCall(request).enqueue(new Callback() {
