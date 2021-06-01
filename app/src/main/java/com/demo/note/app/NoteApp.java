@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 /**
- * @author haoyupeng@bytedance.com
+ * @author haoyupeng
  * @description：
  * @time 2021/5/19
  */

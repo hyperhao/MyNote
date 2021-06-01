@@ -10,7 +10,7 @@ import com.demo.note.R;
 import com.demo.note.base.activity.BaseActivity;
 
 /**
- * @author haoyupeng@bytedance.com
+ * @author haoyupeng
  * @description：
  * @time 2021/5/20
  */

@@ -9,7 +9,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 /**
- * @author haoyupeng@bytedance.com
+ * @author haoyupeng
  * @description：
  * @time 2021/5/19
  */

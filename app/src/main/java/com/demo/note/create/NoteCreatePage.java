@@ -23,7 +23,7 @@ import com.demo.note.bean.NoteModel;
 import jp.wasabeef.richeditor.RichEditor;
 
 /**
- * @author haoyupeng@bytedance.com
+ * @author haoyupeng
  * @description：
  * @time 2021/5/19
  */

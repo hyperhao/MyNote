@@ -1,7 +1,7 @@
 package com.demo.note.bean;
 
 /**
- * @author haoyupeng@bytedance.com
+ * @author haoyupeng
  * @description：
  * @time 2021/5/19
  */

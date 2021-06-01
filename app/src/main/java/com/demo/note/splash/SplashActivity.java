@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.demo.note.list.HomeActivity;
 
 /**
- * @author haoyupeng@bytedance.com
+ * @author haoyupeng
  * @description：
  * @time 2021/5/19
  */

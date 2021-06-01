@@ -18,7 +18,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 /**
- * @author haoyupeng@bytedance.com
+ * @author haoyupeng
  * @description：
  * @time 2021/5/20
  */
